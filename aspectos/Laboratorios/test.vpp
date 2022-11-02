@@ -1,0 +1,37 @@
+class Purse
+
+types
+public CardID = token
+instance variables
+private balance : nat;
+private cardNo : CardID;
+
+operations
+
+public IncreaseBal: nat ==> ()
+IncreaseBal(sum) ==
+    balance := balance + sum;
+
+public DecreaseBal: nat ==> ()
+DecreaseBal(sum) ==
+    balance := balance - sum;
+pre sum <= balance;
+
+public GetBalance:() ==>
+GetBalance() ==
+    return balance;
+
+public GetCardNo:() ==> CardId
+GetCardNo() ==
+    return cardNo;
+
+Public Purse CardId * nat ==> Purse
+Purse(newId, startbal) == 
+( cardNo := newId;
+  balance := startbal;
+)
+
+functions 
+-- no functions currently defined
+
+end Purse

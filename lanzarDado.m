@@ -1,6 +1,6 @@
-N-100:
-v=rand (1,N);
-X-zeros (1,N);
+N=50;
+v=randi(6,1,N);
+X=zeros (1,N);
 p=1/6;
 figure (1)
 plot (v,'.')
@@ -41,7 +41,8 @@ tres=find(X==3);
 cuatro=find(X==4);
 cinco=find(X==5);
 seis=find(X==6);
-//probabilidades
+
+%probabilidades
 
 f1=length(uno)/N;
 f2=length(dos)/N;
