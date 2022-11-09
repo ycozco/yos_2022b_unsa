@@ -1,0 +1,56 @@
+
+class Vehicle
+
+private id : seq of char;
+private brand : seq of char;
+private model : seq of char;
+private size : real;
+private averageSpeed : real;
+private maxSpeed : real;
+private engine : seq of char;
+
+operations
+
+end  Vehicle 
+
+class traffic_light
+private id : seq of char;
+private color_state : seq of char;
+private position : seq of char;
+operations 
+public place_traffic_light : seq of char -> seq of char -> seq of char -> traffic_light
+public get_id : traffic_light -> seq of char
+public get_color_state : traffic_light -> seq of char
+public get_position : traffic_light -> seq of char
+public set_color_state : traffic_light -> seq of char -> traffic_light
+
+end traffic_light
+
+class sensor
+private id : seq of char;
+private place_traffic_light : seq of char;
+private position : seq of char;
+private traffic_condition : seq of char;
+operations 
+public start_sensor : seq of char -> seq of char -> sensor
+public verify_routes : sensor -> seq of char 
+public update_routes : sensor -> seq of char 
+public get_traffic_condition : sensor -> seq of char
+
+end sensor
+intersecciones calles avenidas
+
+class Map
+    types 
+    public String = seq of char;
+instance variables
+    private streets : set of street;
+    private avenues : set of avenue;
+    private intersections : set of intersection;
+    private vehicles : map  Vehicle`VehicleId to Vehicle;
+
+    private traffic_lights : map  traffic_light`traffic_lightId to traffic_light;
+    inv forall t  in set inds traffic_lithts & t.color_state = "red" | t.color_state = "green" | t.color_state = "yellow";
+    private sensors : map  sensor`sensorId to sensor;
+    inv forall p in set dom Purses & Purses(p).GetCardNo() = p;
+operations
